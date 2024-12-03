@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groffer Organic Food Project</title>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+</head>
+
+<body>
+  <!-- header section -->
+  <header class="position-sticky top-0 z-1 bg-white">
+    <div class="container py-3">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-2 d-flex justify-content-start align-items-center p-2 d-lg-none">
+          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasMenu">
+            <iconify-icon icon="mingcute:menu-fill"></iconify-icon>
+          </button>
+        </div>
+
+
+        <div class="col-4 col-lg-2 d-flex align-items-center">
+          <img class="img-fluid me-5" src="./imges/Groffer-Logo (1).svg" alt="Logo" class="ms-2">
+        </div>
+
+
+        <div class="col-8 col-lg-6 d-none d-lg-flex justify-content-center">
+          <div class="input-group">
+            <select class="form-select" aria-label="Category select">
+              <option selected>Category</option>
+              <option value="1">Fasting</option>
+              <option value="2">Vegan</option>
+              <option value="3">Gluten-free</option>
+
+            </select>
+            <input type="text" class="form-control" placeholder="Search products..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="button" id="button-search">
+              <iconify-icon icon="basil:search-outline"></iconify-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Section for Login, Cart, and Account -->
+        <div class="col-4 col-lg-4 d-flex justify-content-end align-items-center">
+          <div class="d-flex align-items-center">
+            <!-- Login/Account Links for large screens -->
+            <div class="d-none d-lg-block d-flex align-items-center">
+              <div class="text-center me-4 d-none d-lg-block">
+
+                <div class="d-flex align-items-center">
+                  <iconify-icon class="fs-2  me-2" icon="fluent-mdl2:contact" data-bs-target="#exampleModalToggle2"
+                    data-bs-toggle="modal"></iconify-icon>
+                  <div class="d-flex flex-column align-items-start">
+                    <span class="fw-bold">Account $ lists</span>
+                    <span>
+                      <a href="./Pages/login.html" class="text-black fw-bold">Login</a> /
+                      <a href="./pages/signin.html" class="text-black fw-bold">Sigin</a>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Cart Section -->
+            <div class="d-flex align-items-center bg-warning text-black rounded-3 px-4 py-2 ms-3">
+              <div class="position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight">
+                <iconify-icon class="text-black" icon="mdi:shopping-cart" width="20" height="20"></iconify-icon>
+                <span id="cartQuantityBadge"
+                  class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-success">0</span>
+              </div>
+              <h6 id="totalPrice" class="mb-0 ms-2 d-none d-lg-block">Cart <br><span>$0.00</span></h6>
+            </div>
+
+            <!-- Account Icon for Mobile -->
+            <div class="ms-1 d-lg-none">
+              <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin"
+                aria-controls="offcanvasLogin">
+                <iconify-icon class="fs-1 rounded-circle bg-success mt-1 p-2 text-white fw-bold"
+                  icon="arcticons:contacts-alt"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <hr class="d-none d-md-none d-lg-block">
+
+  <nav class="container navbar navbar-expand-lg bg-white d-none d-md-none d-lg-block">
+    <div class="row w-100 align-items-center">
+
+      <div class="col-md-4 d-flex align-items-center">
+        <i class="fas fa-bars me-2"></i>
+        <div class="dropdown">
+          <a href="#" class="text-dark dropdown-toggle fs-5 fw-bold" id="shopDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Shop by Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+
+            <li><a class="dropdown-item" href="#">Fresh Vegetables</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Meat & Seatfood</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Pantry Staple</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Seasonal Box</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Dairy & Eggs</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Bread & Butter</a></li>
+          </ul>
+        </div>
+        <span class="mx-3">|</span>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-dark fw-bold fs-6" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark fw-bold fs-6" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <div class="position-relative">
+              <a class="nav-link text-dark fw-bold fs-6" href="#">Shop</a>
+              <span class="badge bg-warning text-dark position-absolute" style="top: -10px; right: -0px;">New</span>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Blog
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Blog Default</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Single Artical</a></li>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Media
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">2 Columns</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">3 Columns</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">4 Columns</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Contact</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="#">Wishlist</a></li>
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="col-md-4 offset-md-4 d-flex justify-content-end align-items-center">
+        <i class="fas fa-phone-alt me-2"></i>
+        <span class="fw-bold fs-6">+0 1800 7777 000</span>
+        <a href="#" class="btn btn-warning ms-3 fs-6">Get a Quote</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="bg-color mt-4">
+    <div class="container">
+      <div class="row align-items-center mt-3">
+        <div class="col-md-6 col-12 mb-4 mb-md-0 mt-sm-5">
+          <h3 class="fw-bold mt-5">Starting at <span class="text-success">$22</span></h3>
+          <h1 class="fw-bold display-3">Grocery Right <br> At Your Door</h1>
+          <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button type="button" class="btn btn-warning btn-lg fw-bold">Shop Now</button>
+          <img class="img-fluid w-25" src="./imges/Main-slider1.png" alt="">
+        </div>
+        <div class="col-md-6 col-12">
+          <img class="img-fluid" src="./imges/Hero-img.png" alt="Grocery Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex flex-column align-items-center text-center">
+        <img class="img-fluid w-25 mb-3" src="./imges/Main-about1 01.svg" alt="">
+        <h4 class="fw-bold">Grown Today, Delivered <br> Tomorrow</h4>
+        <p class="text-secondary">Our organic fruit and vegetables are grown by farmers who use only natural fertilizers
+          on their own land.</p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex flex-column align-items-center text-center">
+        <img class="img-fluid w-25 mb-3" src="./imges/Main-about2.svg" alt="">
+        <h4 class="fw-bold">Not Your Average Grocery <br> Delivery</h4>
+        <p class="text-secondary">Save youerself time, money and a bit of sanity with these easy and affordable grocery
+          delivery services easy.</p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex flex-column align-items-center text-center">
+        <img class="img-fluid w-25 mb-3" src="./imges/Main-about3.svg" alt="">
+        <h4 class="fw-bold">Your Favorites on <br> Autpoilot</h4>
+        <p class="text-secondary">Put healthy eating on aoutopilot with mix the vegrtables, fruits and other organic
+          produce & clean ingredients.</p>
+      </div>
+    </div>
+  </div>
+  <hr class="container">
+
+  <!-- First Cards -->
+
+  <div class="container my-5">
+    <h1 class="text-center fw-bold mt-5">Top Categories</h1>
+    <div class="row g-3 mt-5 my-5">
+      <!-- Larger Card -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card h-100 rounded-3 Regular shadow card-bg-img d-flex flex-column custom-card">
+          <div class="card-body d-flex flex-column justify-content-center text-white">
+            <div class="sidebar text-center">
+              <h1 class="fw-bold">Paleo</h1>
+              <p class="fw-bold">9 Products</p>
+              <button class="btn btn-outline-light fw-bold">View All Items</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Product 2 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+        <div class="card h-100  Regular shadow border-0 rounded-3">
+          <img src="./imges/card img 1.jpg" class="card-img-top img-fluid mt-5 cursor-pointer"
+            alt="Morrisons The Best Jumbo">
+          <img src="./imges/sellinh hover img5.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Broccoli and Cauliflower" data-price="50.00" data-img="./imges/card img 1.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Broccoli and Cauliflower</h5>
+            <span class="text-success fw-bold">$50.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+        <div class="card h-100   Regular shadow border-0 rounded-3">
+          <img src="./imges/selling img3.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+          <img src="./imges/selling hover img 3.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Zesco Ripe Bananas" data-price="100.00" data-img="./imges/selling img3.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Cadbury Crunchie Chocolate Bar</h5>
+            <span class="text-success fw-bold">$100.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+        <div class="card h-100 Regular shadow border-0 rounded-3">
+          <img src="./imges/Sellinf img 1.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+          <img src="./imges/Selling hover img1.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Fresh For The Bold Ground" data-price="120.00" data-img="./imges/Sellinf img 1.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Fresh For The Bold Ground</h5>
+            <span class="text-success fw-bold">$120.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+        <div class="card h-100  Regular shadow border-0  rounded-3">
+          <img src="./imges/selling img4.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+          <img src="./imges/selling hover img4.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Frito-Lay Doritos Cheetos Mix" data-price="180.00" data-img="./imges/selling img4.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Frito-Lay Doritos Cheetos Mix</h5>
+            <span class="text-success fw-bold">$180.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Second Cards -->
+  <div class="container my-5 mt-5">
+    <div class="row g-3">
+      <!-- Product 1 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2 order-2">
+        <div class="card h-100   Regular shadow border-0 rounded-3">
+          <img src="./imges/selling img5.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+          <img src="./imges/sellinh hover img5.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Broccoli and Cauliflower Mix" data-price="170.00" data-img="./imges/selling img5.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Broccoli and Cauliflower Mix</h5>
+            <span class="text-success fw-bold">$170.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2 order-3">
+        <div class="card h-100  Regular shadow border-0 rounded-3">
+          <img src="./imges/Product img1.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+          <img src="./imges/selling hover img2.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Cadbury Crunchie Chocolate Bar" data-price="90.00" data-img="./imges/Product img1.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Cadbury Crunchie Chocolate Bar</h5>
+            <span class="text-success fw-bold">$90.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2 order-4">
+        <div class="card h-100   Regular shadow border-0 rounded-3">
+          <img src="./imges/selling img3.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+          <img src="./imges/selling hover img 3.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Finders Keepers Chocolate" data-price="60.00" data-img="./imges/selling img3.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Finders Keepers Chocolate</h5>
+            <span class="text-success fw-bold">$60.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2 order-4">
+        <div class="card h-100 Regular shadow border-0 rounded-3">
+          <img src="./imges/Sellinf img 1.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+          <img src="./imges/Selling hover img1.jpg" class="hover-img img-fluid mt-5 w-100"
+            alt="Morrisons The Best Jumbo - Hover">
+          <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+            data-name="Kitchens of India Paste Chicken" data-price="44.00" data-img="./imges/Sellinf img 1.jpg">
+            <iconify-icon icon="bxs:cart"></iconify-icon>
+          </button>
+          <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+            <iconify-icon icon="noto:star"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="noto:star" class="me-1"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+            <iconify-icon icon="ooui:star" class="me-1 text-secondary fs-6"></iconify-icon>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-secondary fs-6">Kitchens of India Paste Chicken</h5>
+            <span class="text-success fw-bold">$44.00</span>
+            <h6>Per Keliogram</h6>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Larger Card -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 order-1 order-lg-5">
+        <div class="card h-100 rounded-3 Regular shadow card-bg-img d-flex flex-column custom-card">
+          <div class="card-body d-flex flex-column justify-content-center text-white">
+            <div class="sidebar text-center">
+              <h1 class="fw-bold">Vegan</h1>
+              <p class="fw-bold">9 Products</p>
+              <button class="btn btn-outline-light fw-bold">View All Items</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-color mt-5 py-5 d-none d-lg-none d-md-block d-sm-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-4">
+          <img class="img-fluid" src="./imges/Main_Deal-Banner.png" alt="Organic Fruit Box">
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <h3 class="text-danger-emphasis fw-bold">Special Offer</h3>
+          <h1 class="fw-bold mt-2">Organic Fruit Box</h1>
+          <p class="text-secondary mt-3">
+            Organic foods are the only source we can rely on for proper health care. Organic food is the most nutritious
+            food and should be consumed by everyone.
+          </p>
+
+          <h1 class="text-success fw-bold mt-4">-65 -9 : -1 : 7- : 36</h1>
+
+          <button type="button" class="btn btn-warning btn-lg fw-bold mt-3">View All Deals</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fruit-bg-img mt-5 py-5 d-none d-sm-none d-lg-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-4">
+          <img class="img-fluid" src="./imges/Main_Deal-Banner.png" alt="Organic Fruit Box">
+        </div>
+        <div class="col-12 col-md-6 text-center mt-5">
+          <h3 class="text-danger-emphasis fw-bold mt-5">Special Offer</h3>
+          <h1 class="fw-bold mt-2">Organic Fruit Box</h1>
+          <p class="text-secondary mt-3">
+            Organic foods are the only source we can rely on for proper health care. Organic food is the most nutritious
+            food and should be consumed by everyone.
+          </p>
+
+          <h1 class="text-success fw-bold mt-4">-65 -9 : -1 : 7- : 36</h1>
+
+          <button type="button" class="btn btn-warning btn-lg fw-bold mt-3">View All Deals</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- frist row cards -->
+
+  <div class="container mt-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <div class="mb-3">
+        <h1 class="fw-bold">Best Selling Items</h1>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center">
+        <button type="button" class="btn btn-success fw-bold mt-3 me-2">BAKARY</button>
+
+        <button type="button" class="btn fw-bold mt-3 border-0 me-2">Granola</button>
+        <button type="button" class="btn fw-bold mt-3 border-0">Muesli</button>
+      </div>
+    </div>
+    <hr class="container">
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+        <!-- Product 1 -->
+        <div class="col">
+          <div class="card h-100 Regular shadow border-0 rounded-3">
+            <img src="./imges/Sellinf img 1.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/Selling hover img1.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Morrisons The Best Jumbo" data-price="65.00" data-img="./imges/Sellinf img 1.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title">Morrisons The Best Jumbo</h6>
+              <p class="card-text fw-bold text-success">$65.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col">
+          <div class="card h-100  Regular shadow border-0 rounded-3">
+            <img src="./imges/Selling img2.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/selling hover img2.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Goodfellas Baked Thin Pizza Salami" data-price="55.00" data-img="./imges/Selling img2.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title">Goodfellas Baked Thin Pizza Salami</h6>
+              <p class="card-text fw-bold text-success">55.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col ">
+          <div class="card h-100   Regular shadow border-0 rounded-3">
+            <img src="./imges/selling img3.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/selling hover img 3.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Birds Eye Crispy Chicken Dippers" data-price="22.00" data-img="./imges/selling img3.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title">Birds Eye Crispy Chicken Dippers</h6>
+              <p class="card-text fw-bold text-success">$22.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col">
+          <div class="card h-100 rounded-3 Regular shadow b-g d-flex flex-column">
+            <div class="card-body d-flex flex-column justify-content-end">
+              <h6 class="card-title mt-auto fw-bold text-white fs-6">20x Fruit <br> Baskets at &199</h6>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Product 5 -->
+        <div class="col">
+          <div class="card h-100  Regular shadow border-0  rounded-3">
+            <img src="./imges/selling img4.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/selling hover img4.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Low Sodium Light Salted Snack Nuts" data-price="44.00" data-img="./imges/selling img4.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title text-start">Low Sodium Light Salted Snack Nuts</h6>
+              <p class="card-text fw-bold text-success">$44.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col">
+          <div class="card h-100   Regular shadow border-0 rounded-3">
+            <img src="./imges/selling img5.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/sellinh hover img5.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="BetterBody Foods Organic Chia" data-price="40.00" data-img="./imges/selling img5.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title fs-6">BetterBody Foods Organic Chia</h6>
+              <p class="card-text fw-bold text-success">$40.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- second row cards -->
+  <div class="container mt-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <div class="mb-3">
+        <h1 class="fw-bold">Freshest Products</h1>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center"> <!-- Flex-wrap for mobile -->
+        <button type="button" class="btn btn-success fw-bold mt-3 me-2">APPLYS</button>
+        <!-- Added margin between buttons -->
+        <button type="button" class="btn fw-bold mt-3 border-0 me-2">Berries</button>
+        <button type="button" class="btn fw-bold mt-3 border-0">Citrus</button>
+      </div>
+    </div>
+    <hr class="container">
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+        <!-- Product 1 -->
+        <div class="col">
+          <div class="card h-100 Regular shadow border-0 rounded-3">
+            <img src="./imges/Product img1.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/Selling hover img1.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Jacob’s Baked Crinklys Cheese" data-price="110.00" data-img="./imges/Product img1.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title">Jacob’s Baked Crinklys Cheese</h6>
+              <p class="card-text fw-bold text-success">110.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col">
+          <div class="card h-100  Regular shadow border-0 rounded-3">
+            <img src="./imges/Product img2.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/Product hover im2.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Green Mountain Coffee Roast" data-price="22.00" data-img="./imges/Product img2.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title">Green Mountain Coffee Roast</h6>
+              <p class="card-text fw-bold text-success">$22.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+
+
+        <div class="col" style="background-repeat: no-repeat; background-size: cover;">
+          <div class="card h-100 rounded-3 Regular shadow bg-img-product d-flex flex-column">
+            <div class="card-body d-flex flex-column justify-content-end">
+              <h6 class="card-title mt-auto fw-bold text-white fs-6">20x Fruit <br> Baskets at &199</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="col ">
+          <div class="card h-100  Regular shadow border-0 rounded-3">
+            <img src="./imges/Product img4.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/Product hover img4.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Frito-Lay Doritos Cheetos" data-price="80.00" data-img="./imges/Product img4.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title">Frito-Lay Doritos Cheetos</h6>
+              <p class="card-text fw-bold text-success">80.00</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Product 5 -->
+        <div class="col">
+          <div class="card h-100  Regular shadow border-0 rounded-3">
+            <img src="./imges/Product img5.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/Product hover img5.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Morrisons The Best Jumbo" data-price="30.00" data-img="/imges/Product img5.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title text-start">Nature’s Bakery Whole Wheat Bars</h6>
+              <p class="card-text fw-bold text-success">$30.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col">
+          <div class="card h-100 Regular shadow border-0 rounded-3">
+            <img src="./imges/Product img6.jpg" class="card-img-top img-fluid mt-5" alt="Morrisons The Best Jumbo">
+            <img src="./imges/Product hover img6.jpg" class="hover-img img-fluid mt-5 w-100"
+              alt="Morrisons The Best Jumbo - Hover">
+            <button class="btn btn-warning position-absolute top-0 end-0 rounded-start-pill add-to-cart-btn"
+              data-name="Fresh For The Bold Ground" data-price="43.00" data-img="./imges/Product img6.jpg">
+              <iconify-icon icon="bxs:cart"></iconify-icon>
+            </button>
+            <div class="card-body">
+              <h6 class="card-title fs-6">Fresh For The Bold Ground</h6>
+              <p class="card-text fw-bold text-success">$43.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   <div class="container mt-5 g-3 my-5 d-none d-sm-none d-md-block d-lg-block">
+    <div class="row">
+      <div class="col-md-12 col-lg-5 mb-4 baner-bg-img bg-no-repeat bg-cover">
+        <div class="mt-5">
+          <span>10% At Any Nearest Stores</span>
+          <h1 class="fw-bold mt-3">30% Off On <br> All Veggies</h1>
+          <button type="button" class="btn btn-success mt-2">Shop Now</button>
+        </div>
+      </div>
+      <div class="col-lg-2">
+      </div>
+      <div class="col-md-12 col-lg-5 mb-4 bg-img-2 bg-no-repeat bg-cover">
+        <div class="mt-5">
+          <span>20% Online Orders Only</span>
+          <h1 class="fw-bold mt-3">Organic <br> Fruits & Nuts</h1>
+          <button type="button" class="btn btn-success mt-2">Shop Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row text-center mt-5">
+      <!-- Column 1 -->
+      <div class="col-12 col-sm-6 col-md-3 mb-4">
+        <img src="./imges/service img1.png" alt="" class="img-fluid mb-3">
+        <h4 class="fw-bold">Local Pickup</h4>
+        <p class="text-secondary">Get orders faster while avoiding shipping fees</p>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-12 col-sm-6 col-md-3 mb-4">
+        <img src="./imges/service img2.png" alt="" class="img-fluid mb-3">
+        <h4 class="fw-bold">Local Delivery</h4>
+        <p class="text-secondary">100% curbside recyclable boxes on demand</p>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-12 col-sm-6 col-md-3 mb-4">
+        <img src="./imges/service img3.png" alt="" class="img-fluid mb-3">
+        <h4 class="fw-bold">Conscious Eaters</h4>
+        <p class="text-secondary">We are supporting small farmers and producers</p>
+      </div>
+      <!-- Column 4 -->
+      <div class="col-12 col-sm-6 col-md-3 mb-4">
+        <img src="./imges/service img4.png" alt="" class="img-fluid mb-3">
+        <h4 class="fw-bold">Delicious & New Food</h4>
+        <p class="text-secondary">Feel great about what you eat every day</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-5 ligt-bgcolor mt-5">
+    <!-- <img class="position-absolute end-0" src="./imges/BG-02.png" alt="" style="top: 550%;"> -->
+    <div class="container mt-5 my-5">
+      <div class="text-center mb-5 position-relative">
+        <h4 class="text-warning">Client Reviews</h4>
+        <h1 class="fw-bold">From The People</h1>
+      </div>
+
+      <div class="row text-center mt-5 my-5">
+
+        <div class="col-12 col-md-4 mb-4">
+          <div class="">
+            <img src="./imges/People 1.jpg" class="rounded-4 mx-auto img-fluid w-25" alt="Client Photo">
+            <p class="mt-4 text-secondary">“What a beautiful haul from Groffer Market week! It is basically a chef’s
+              dream. Definitely
+              have a lot to work.”</p>
+            <h5 class="fw-bold text-success">Martin Culich</h5>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-4 mb-4">
+          <div class="">
+            <img src="./imges/People 2.jpg" class="rounded-4 mx-auto img-fluid w-25" alt="Client Photo">
+            <p class="mt-4 text-secondary">“Highly recommending them! Groffer is delivered to door and honestly, it does
+              seem cheaper
+              compared to store.”</p>
+            <h5 class="fw-bold text-success">Naren Doe</h5>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-4 mb-4">
+          <div class="">
+            <img src="./imges/People 3.jpg" class="rounded-4 mx-auto img-fluid w-25" alt="Client Photo">
+            <p class="mt-4 text-secondary">“Groffer always has a unique selection of items I don’t normally see in the
+              store. Their
+              produce is top-notch.”</p>
+            <h5 class="fw-bold text-success">Louis Doe</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Footer-->
+  <footer class="footer">
+    <div class="container py-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center my-3">
+        <ul class="d-flex list-unstyled mb-0 flex-wrap justify-content-center justify-content-md-start">
+          <li class="me-3 fw-bold">My account</li>
+          <li class="me-3 fw-bold">Bag</li>
+          <li class="me-3 fw-bold">Personal info</li>
+          <li class="fw-bold">Wishlist</li>
+        </ul>
+        <div class="d-flex align-items-center mt-3 mt-md-0">
+          <iconify-icon icon="fontisto:facebook" class="me-2"></iconify-icon>
+          <iconify-icon icon="ri:twitter-fill" class="me-2"></iconify-icon>
+          <iconify-icon icon="el:skype" class="me-2"></iconify-icon>
+          <iconify-icon icon="tdesign:logo-instagram" class="me-2"></iconify-icon>
+        </div>
+      </div>
+      <hr class="container text-secondary">
+    </div>
+
+    <div class="container py-4">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-4 mb-md-0">
+          <div class="footer-logo">
+            <img class="img-fluid w-50" src="./imges/Groffer-Logo (1).svg" alt="">
+          </div>
+          <p class="text-secondary mt-2">Online grocery shopping and delivery at Groffer. Buy fruits, bread, vegetables.
+          </p>
+          <div class="d-flex flex-column flex-sm-row  mt-4">
+            <button
+              class="bg-black border-0 rounded-3 mb-2 mb-sm-0 me-sm-2 text-nowrap d-flex align-items-center justify-content-center"
+              style="width: 160px; height: 50px;">
+              <div class="d-flex align-items-center">
+                <iconify-icon class="mb-1 me-1 fs-4 text-white" icon="bi:apple"></iconify-icon>
+                <div class="text-white text-center">
+                  <span class="">Download on the</span>
+                  <h6 class="fw-bold mb-0">Apple Store</h6>
+                </div>
+              </div>
+            </button>
+            <button
+              class="bg-black border-0 rounded-3 ms-sm-2 text-nowrap d-flex align-items-center justify-content-center"
+              style="width: 160px; height: 50px;">
+              <div class="d-flex align-items-center">
+                <iconify-icon class="fs-4" icon="logos:google-play-icon"></iconify-icon>
+                <div class="text-white text-center">
+                  <span class="">GET IT ON</span>
+                  <h6 class="fw-bold mb-0">Google Play</h6>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+
+        <div
+          class="col-lg-8 col-md-12 col-sm-12 mt-5 d-flex flex-column flex-sm-row justify-content-center align-items-center">
+
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4 mb-md-0">
+              <h5 class="fw-bold">Quick Links</h5>
+              <ul class="list-unstyled text-secondary">
+                <li>Our Services</li>
+                <li>About Company</li>
+                <li>Latest News</li>
+                <li>Meet The Team</li>
+                <li>Our Products</li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4 mb-md-0">
+              <h5 class="fw-bold">Account</h5>
+              <ul class="list-unstyled text-secondary">
+                <li>Your Account</li>
+                <li>Shipping rates</li>
+                <li>Refunds</li>
+                <li>Delivery Info</li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4 mb-md-0">
+              <h5 class="fw-bold">About Us</h5>
+              <ul class="list-unstyled text-secondary">
+                <li>About Company</li>
+                <li>Our Team</li>
+                <li>Contacts</li>
+                <li>News & Events</li>
+                <li>Order Tracking</li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4 mb-md-0">
+              <h5>Contact Us</h5>
+              <p class="text-secondary">
+                <iconify-icon icon="bxs:map" class="me-1 text-success"></iconify-icon>
+                4 Grand Central Terminal New York, NY 10 City name, CA 90896, United States USA.
+              </p>
+              <p class="text-secondary">
+                <iconify-icon icon="ic:round-email" class="text-success me-1"></iconify-icon>
+                contact@example
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-5 text-secondary text-center">Copyright by ModelTheme. All Rights Reserved.</p>
+    </div>
+
+  </footer>
+
+  <!-- OFFCAVAS Login & Sigin -->
+  <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasLoginLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+      <div class=" d-flex">
+        <iconify-icon class="fs-1 rounded-circle bg-success p-2 text-white fw-bold"
+          icon="arcticons:contacts-alt"></iconify-icon>
+        <h2 class="ms-3 mt-1">LOGIN/SIGN IN</h2>
+
+      </div>
+
+
+
+
+      <div class="d-grid gap-2">
+
+        <button type="button" class="btn btn-white shadow mt-3 btn-lg text-start"><a class="text-black"
+            href="./pages/login.html">Login</a></button>
+
+
+        <button type="button"
+          class="btn btn-white shadow mt-2 btn-lg d-flex justify-content-between align-items-center">
+          <a class="text-black" href="./pages/signin.html"> Sign in</a>
+
+
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Add to Cart off Offcavas-->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Shopping Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="cartItems">
+      <!-- Cart items will appear here -->
+      <div id="cartItems"></div>
+    </div>
+
+    <!-- Footer section showing total price -->
+    <div class="offcanvas-footer container mb-5">
+      <hr />
+      <div class="d-flex justify-content-between">
+        <strong class="text-black-50">Total:</strong>
+        <strong id="totalPrices">$0.00</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Menu for Mobile and Tablet -->
+  <div class="offcanvas offcanvas-start w-75" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasMenuLabel">Shop by Categories </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item "><a class="text-dark text-decoration-none" href="#">Home</a></li>
+        <li class="list-group-item "><a class="text-dark text-decoration-none" href="#">About</a></li>
+        <li class="list-group-item "><a class="text-dark text-decoration-none" href="#">Shop</a></li>
+        <li class="list-group-item "><a class="text-dark text-decoration-none" href="#">Blog</a></li>
+        <li class="list-group-item "><a class="text-dark text-decoration-none" href="#">Media</a></li>
+        <li class="list-group-item "><a class="text-dark text-decoration-none" href="#">Pages</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="./js/add-to-cart.js"></script>
+</body>
+
+</html>

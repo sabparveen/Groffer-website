@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+* {
+    font-family: "Space Grotesk", sans-serif;
+}
+.bg-color {
+    background-image: url(./imges/Hero-bg-img.jpg);
+    background-color: #f8f9fa
+}
+.card-bg-img {
+    background-image: url(./imges/card-bg-img.jpg);
+}
+.shop-bg-img {
+    background-image: url(./imges/shop-bg-img.png);
+    height: 45vh;
+}
+.fruit-bg-img {
+    background-image: url(./imges/Fruit\ bg-img.png);
+    height: 70vh;
+}
+.hover-card:hover {
+    transform: scale(1.05);
+}
+.baner-bg-img {
+    background-image: url(./imges/Main-banners01.png);
+    height: 30vh;
+}
+.bg-img-2 {
+    background-image: url(./imges/Main-banner02.jpeg);
+    height: 30vh;
+}
+.b-g {
+    background-image: url(./imges/bgimg.jpg);
+    background-size: cover;
+    
+}
+.bg-img-product {
+    background-image: url(./imges/bgimg2.jpg);
+    background-size: cover;
+   
+}
+.hover-img {
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+}
+.card:hover .hover-img {
+    opacity: 1;
+}
+.card:hover {
+    border: 3px solid hwb(49 4% 5% / 0.918) !important;
+}
+.ligt-bgcolor {
+    background-color: #e0eff6;
+}
+.footer {
+    background-color: #f8f9fa;
+    
+}
+@media (max-width: 576px) {
+    .custom-card {
+        min-height: 440px;
+      
+    }
+}
